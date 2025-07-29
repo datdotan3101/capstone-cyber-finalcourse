@@ -1,0 +1,29 @@
+{
+  "name": "capstone-cyber-finalcourse",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/datdotan3101/capstone-cyber-finalcourse#readme",
+  "bugs": {
+    "url": "https://github.com/datdotan3101/capstone-cyber-finalcourse/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datdotan3101/capstone-cyber-finalcourse.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --import=extensionless/register server"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.13.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "extensionless": "^1.9.9",
+    "mysql2": "^3.14.2",
+    "nodemon": "^3.1.10"
+  }
+}
