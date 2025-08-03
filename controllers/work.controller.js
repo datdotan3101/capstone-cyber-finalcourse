@@ -32,6 +32,7 @@ const workControllers = {
     const resData = responseSuccess(result);
     res.json(resData);
   },
+ 
 };
 
 export default workControllers;

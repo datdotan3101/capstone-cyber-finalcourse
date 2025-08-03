@@ -158,8 +158,25 @@ const workServices = {
   },
   congViecDeleteID: async (req) => {
     const { id } = req.params;
+    const congViecId = Number(id);
+
+    // Xoá các bình luận liên quan
+    await prisma.binhLuan.deleteMany({
+      where: {
+        ma_cong_viec: congViecId,
+      },
+    });
+
+    // Xoá các lượt thuê công việc liên quan
+    await prisma.thueCongViec.deleteMany({
+      where: {
+        ma_cong_viec: congViecId,
+      },
+    });
+
+    // Xoá công việc
     const congViecDeleteID = await prisma.congViec.delete({
-      where: { id: Number(id) },
+      where: { id: congViecId },
     });
 
     if (!congViecDeleteID) {
@@ -168,6 +185,5 @@ const workServices = {
 
     return congViecDeleteID;
   },
-  
 };
 export default workServices;
