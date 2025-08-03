@@ -12,6 +12,11 @@ const authController = {
     const resResult = responseSuccess(result);
     res.json(resResult);
   },
+  refreshToken: async (req, res) => {
+    const result = await authService.refreshToken(req);
+    const resResult = responseSuccess(result);
+    res.json(resResult);
+  },
 };
 
 export default authController;
