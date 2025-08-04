@@ -3,10 +3,10 @@ import prisma from "../common/Prisma/init.prisma";
 const commentService = {
   binhLuanGet: async (req) => {
     const {
-      ma_nguoi_binh_luan,
       ma_cong_viec,
-      noi_dung,
+      ma_nguoi_binh_luan,
       ngay_binh_luan,
+      noi_dung,
       sao_binh_luan,
     } = req.query;
 
