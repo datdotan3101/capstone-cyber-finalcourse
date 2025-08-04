@@ -67,8 +67,8 @@ model NguoiDung {
   birth_day     String?        @db.VarChar(20)
   gender        String?        @db.VarChar(10)
   role          String?        @db.VarChar(50)
-  skill         String?        @db.VarChar(255)
-  certification String?        @db.VarChar(255)
+  skill         Json?
+  certification Json?
   BinhLuan      BinhLuan[]
   CongViec      CongViec[]
   ThueCongViec  ThueCongViec[]

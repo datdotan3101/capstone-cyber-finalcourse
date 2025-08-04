@@ -5,7 +5,17 @@ import jwt from "jsonwebtoken";
 
 const authService = {
   register: async (req) => {
-    const { name, email, pass_word } = req.body;
+    const {
+      name,
+      email,
+      pass_word,
+      phone,
+      birth_day,
+      gender,
+      role,
+      skill,
+      certification,
+    } = req.body;
 
     const userExist = await prisma.nguoiDung.findUnique({
       where: { email: email },
@@ -22,6 +32,12 @@ const authService = {
         name: name,
         email: email,
         pass_word: passHash,
+        phone: phone,
+        birth_day: birth_day,
+        gender: gender,
+        role: role,
+        skill: skill,
+        certification: certification,
       },
     });
 
