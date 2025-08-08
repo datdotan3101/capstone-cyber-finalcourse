@@ -109,17 +109,6 @@ const rentServices = {
         ma_nguoi_thue: true,
         ngay_thue: true,
         hoan_thanh: true,
-        CongViec: {
-          select: {
-            ten_cong_viec: true,
-          },
-        },
-        NguoiDung: {
-          select: {
-            name: true,
-            email: true,
-          },
-        },
       },
     });
 

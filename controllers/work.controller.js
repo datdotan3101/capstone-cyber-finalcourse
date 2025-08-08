@@ -32,7 +32,11 @@ const workControllers = {
     const resData = responseSuccess(result);
     res.json(resData);
   },
- 
+  congViecGetMenu: async (req, res) => {
+    const result = await workServices.congViecGetMenu(req);
+    const resData = responseSuccess(result);
+    res.json(resData);
+  },
 };
 
 export default workControllers;

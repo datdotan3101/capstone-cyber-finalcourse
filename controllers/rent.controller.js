@@ -42,6 +42,11 @@ const rentControllers = {
     const resData = responseSuccess(result);
     res.json(resData);
   },
+  finishWork: async (req, res) => {
+    const result = await rentServices.finishWork(req);
+    const resData = responseSuccess(result);
+    res.json(resData);
+  },
 };
 
 export default rentControllers;

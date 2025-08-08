@@ -1,3 +1,4 @@
+import { BadrequestException } from "../common/helpers/exception.helper";
 import prisma from "../common/Prisma/init.prisma";
 
 const commentService = {

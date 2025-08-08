@@ -88,32 +88,30 @@ const detailWorkServices = {
     return updateDetail;
   },
   detailWorkDeleteID: async (req) => {
-     const { id } = req.params;
+    const { id } = req.params;
 
-     // 1. Kiểm tra xem có công việc nào đang liên kết với chi tiết loại công việc này không
-     const relatedJobs = await prisma.congViec.findMany({
-       where: {
-         ma_chi_tiet_loai: Number(id),
-       },
-     });
+    const relatedJobs = await prisma.congViec.findMany({
+      where: {
+        ma_chi_tiet_loai: Number(id),
+      },
+    });
 
-     if (relatedJobs.length > 0) {
-       throw new Error(
-         "Không thể xóa vì vẫn còn công việc liên kết đến chi tiết này."
-       );
-     }
+    if (relatedJobs.length > 0) {
+      throw new Error(
+        "Không thể xóa vì vẫn còn công việc liên kết đến chi tiết này."
+      );
+    }
 
-     // 2. Nếu không có công việc liên kết, tiến hành xóa
-     const deletedDetail = await prisma.chiTietLoaiCongViec.delete({
-       where: {
-         id: Number(id),
-       },
-     });
+    const deletedDetail = await prisma.chiTietLoaiCongViec.delete({
+      where: {
+        id: Number(id),
+      },
+    });
 
-     return {
-       message: "Đã xóa thành công chi tiết loại công việc.",
-       deletedDetail,
-     };
+    return {
+      message: "Đã xóa thành công chi tiết loại công việc.",
+      deletedDetail,
+    };
   },
 };
 
